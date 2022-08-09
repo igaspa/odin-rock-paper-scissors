@@ -1,26 +1,40 @@
+const NUM_OF_ROUNDs = 5;
+
+function setPlayerSelection(event) {
+    const playerSelection = event.target.value;
+    let computerSelection = getComputerChoice();
+
+    //console.log(playRound(playerSelection, computerSelection));
+    document.getElementById('roundResult').innerHTML = playRound(playerSelection, computerSelection);
+}
+
+document.getElementById('playerRock').addEventListener('click', setPlayerSelection)
+document.getElementById('playerPaper').addEventListener('click', setPlayerSelection)
+document.getElementById('playerScissors').addEventListener('click', setPlayerSelection)
+
 function playRound(playerSelection, computerSelection) {
     if (computerSelection === playerSelection)
         return "It's a tie";
     // When player chooses Rock
     else if (playerSelection === "rock") {
-        if (computerSelection === "scissor")
-            return "User win, Rock beats Scissor";
+        if (computerSelection === "scissors")
+            return "User win, Rock beats Scissors";
         else if (computerSelection === "paper")
             return "Computer wins, Paper beats Rock";
     }
-    //When player chooses Scissor
-    else if (playerSelection === "scissor") {
+    //When player chooses Scissors
+    else if (playerSelection === "scissors") {
         if (computerSelection === "paper")
-            return "User wins, Scissor beats Paper";
+            return "User wins, Scissors beats Paper";
         else if (computerSelection === "rock")
-            return "Computer wins, Rock beats Scissor";
+            return "Computer wins, Rock beats Scissors";
     }
     //when player chooses Paper
     else if (playerSelection === "paper") {
         if (computerSelection === "rock")
             return "User wins, Paper beats Rock";
-        else if (computerSelection === "scissor")
-            return "Computer wins, Scissor beats Paper";
+        else if (computerSelection === "scissors")
+            return "Computer wins, Scissors beats Paper";
     }
 }
 //Function to get computerChoice
@@ -29,12 +43,11 @@ function getComputerChoice() {
     if (computerChoice === 0)
         return "rock";
     else if (computerChoice === 1)
-        return "scissor";
-    else if (computerChoice === 2)
-        return "paper";
+        return "scissors";
     else
-        return "error";
+        return "paper";
 }
-let playerSelection = "scissor";
-let computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+
+
+//let computerSelection = getComputerChoice();
+//console.log(playRound(playerSelection, computerSelection));
