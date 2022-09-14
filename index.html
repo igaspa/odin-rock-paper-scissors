@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
 
     <link rel="stylesheet" href="./css/index.css">
@@ -10,27 +10,30 @@
 </head>
 
 <body>
-    <h1>Rock, Paper, Scissors</h1>
-    <div id="roundScore">Score: <p id="playerScore"></p>
-        <p id="computerScore"></p>
+    <h1 id="gameTitle">Rock, Paper, Scissors</h1>
+    <div id="resultContainer">
+        <div id="roundScore">Score:
+            <p id="computerScore"></p>
+            <p id="playerScore"></p>
+
+        </div>
     </div>
     <p id="roundResult"></p>
-    <div>
-        <h2>Player</h2>
-        <ul>
-            <li><button id="playerRock" value="rock">Rock</button></li>
-            <li><button id="playerPaper" value="paper">Paper</button></li>
-            <li><button id="playerScissors" value="scissors">Scissors</button></li>
-        </ul>
-    </div>
-
-    <div>
-        <h2>Computer</h2>
-        <ul>
-            <li>Rock</li>
-            <li>Paper</li>
-            <li>Scissors</li>
-        </ul>
+    <div id="computerPlayerContainer">
+        <div id="playerContainer">
+            <h2 id="containerTitle">Player</h2>
+            <div id="playerRock"><input class="image" id="playerChoice" type="image" src="./images/rock.png" value="rock"></div>
+            <div id="playerPaper"><input class="image" id="playerChoice" type="image" src="./images/paper.png" value="paper"></div>
+            <div id="playerScissors"><input class="image" id="playerChoice"type="image" src="./images/scissors.png" value="scissors">
+            </div>
+        </div>
+        <div id="computerContainer">
+            <h2 id="containerTitle">Computer</h2>
+            <div id="computerRock"><input class="image" type="image" src="./images/rock.png" value="rock"></div>
+            <div id="computerPaper"><input class="image" type="image" src="./images/paper.png" value="paper"></div>
+            <div id="computerScissors"><input class="image" type="image" src="./images/scissors.png" value="scissors">
+            </div>
+        </div>
     </div>
     <script src="./javascript/index.js"></script>
 </body>

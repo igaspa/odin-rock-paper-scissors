@@ -1,0 +1,145 @@
+* {
+    font-family: 'Copperplate', Courier, monospace;
+    color: #00F2FA;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #181516;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.image {
+    height: 90px;
+    width: 90px;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: #FA00FA;
+}
+
+#playerChoice:hover {
+    border-color: #fa00fa62;
+}
+
+#computerPlayerContainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-items: center;
+    align-items: center;
+
+}
+
+div>h2 {
+    font-size: 2rem;
+    margin: 5px 20px 20px 20px;
+    font-family: 'Copperplate'
+}
+
+#playerContainer {
+    width: 300px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border: 2px solid;
+    border-radius: 10px;
+    margin: 10px 20px 10px 40px;
+    border-color: #FA00FA;
+    width: 350px;
+}
+
+#computerContainer {
+    width: 300px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border: 2px solid;
+    border-radius: 10px;
+    margin: 10px 20px 10px 40px;
+    border-color: #FA00FA;
+    width: 350px;
+}
+
+#containerTitle {
+    grid-column: 1/-1;
+}
+
+#roundScore {
+    display: grid;
+    grid-template-columns: repeat(2, 40px);
+    grid-template-rows: repeat(2, 0px);
+    padding: 30px;
+    justify-content: space-between;
+    padding: 20px 10px 30px 20px;
+    color: #FFD84A;
+    font-size: 2rem;
+
+}
+
+#computerScore {
+    padding-top: 20px;
+    color: #FFD84A;
+    margin: 20px 50px 10px 40px;
+    font-size: 1.5rem;
+}
+
+#playerScore {
+    padding-top: 20px;
+    margin: 20px 20px 40px 20px;
+    color: #FFD84A;
+    font-size: 1.5rem;
+}
+
+#roundResult {
+    padding: 20px;
+    color: #FFD84A;
+    font-size: 2rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+@media screen and (max-width: 460px) {
+    #computerPlayerContainer {
+        margin: 24px auto 24px auto;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin: 20px auto 20px 80px;
+    }
+
+    #roundResult {
+        margin: 20px 60px 10px 80px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #computerPlayerContainer {
+        margin: 24px auto 24px auto;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin: 20px auto 20px 80px;
+    }
+
+    #roundResult {
+        margin: 20px 60px 10px 80px;
+    }
+}

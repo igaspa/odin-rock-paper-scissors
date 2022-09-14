@@ -9,7 +9,6 @@ document.getElementById('playerScissors').addEventListener('click', setPlayerSel
 
 function playRound(playerSelection, computerSelection) {
     let result = '';
-
     //If computer Choice equals Player Choice
     if (computerSelection === playerSelection)
         result = 'It is a tie';
@@ -44,6 +43,7 @@ function playRound(playerSelection, computerSelection) {
         else if (computerSelection === 'scissors') {
             computerScore++;
             result = 'Computer wins, Scissors beats Paper';
+
         }
     }
     document.getElementById('roundResult').innerHTML = result;
@@ -61,22 +61,25 @@ function getComputerChoice() {
     else
         return 'paper';
 }
-//Play round until Computer or Player reach 5 points
-// function game(playerSelection, computerSelection) {
-//     let scores = playRound(playerSelection, computerSelection);
-//     if (playerScore === NUM_OF_ROUNDS)
-//         return 'Congratulations, you won';
-//     else
-//         return 'You lost, Computer won';
-// }
-// function gameOver() {
-//     return playerScore === 5 || computerScore === 5 
-// }
-function setPlayerSelection(event) {
-    const playerSelection = event.target.value;
-    let computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
-    //gameOver();
 
-    //console.log(playRound(playerSelection, computerSelection));
+//Function that gets player and computer choices and plays game until one reaches 5
+function setPlayerSelection(event) {
+    let playerSelection = event.target.value;
+    let computerSelection = getComputerChoice();
+    function game() {
+        let p1Score = 0;
+        let p2Score = 0;
+        [p1Score, p2Score] = playRound(playerSelection, computerSelection)
+        if (p1Score === 5 || p2Score === 5) {
+            document.getElementById('playerRock').removeEventListener('click', setPlayerSelection)
+            document.getElementById('playerPaper').removeEventListener('click', setPlayerSelection)
+            document.getElementById('playerScissors').removeEventListener('click', setPlayerSelection)
+
+            if (p1Score == 5)
+                document.getElementById('roundResult').innerHTML = 'Congratulations, you won';
+            else
+                document.getElementById('roundResult').innerHTML = 'You lost, try again';
+        }
+    }
+    game();
 }
