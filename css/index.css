@@ -24,6 +24,7 @@ body {
 
 #playerChoice:hover {
     border-color: #fa00fa62;
+    scale: 1.2;
 }
 
 #computerPlayerContainer {
